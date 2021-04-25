@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.cookie.min.js"></script>
+<link rel="stylesheet" href="css/style.css" crossorigin="anonymous">
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="js/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/vue.js"></script>
+	<!-- <script src="js/app.js"></script> -->
+	<title></title>
+	<meta name="description" />
+</head>
+
+<body>
+	<div class="container text-center">
+		<h1>开关控制</h1>
+	</div>
+	<br>
+	<div class="container text-center">
+		<button type="button" id="ledRedOn" class="btn btn-success btn-lg">红灯开</button>
+		<button type="button" id="ledRedOff" class="btn btn-info btn-lg">红灯关</button>
+	</div>
+	<br>
+	<div class="container text-center">
+		<button type="button" id="ledGreenOn" class="btn btn-success btn-lg">绿灯开</button>
+		<button type="button" id="ledGreenOff" class="btn btn-info btn-lg">绿灯关</button>
+	</div>
+	<br>
+	<div class="container text-center">
+		<button type="button" id="ledBlueOn" class="btn btn-success btn-lg">蓝灯开</button>
+		<button type="button" id="ledBlueOff" class="btn btn-info btn-lg">蓝灯关</button>
+	</div>
+	<br>
+	<script>
+		$(function(){
+			$('#ledRedOn').click(function(){
+				$.get("http://192.168.31.94:8080/publish?topic=2018A14133/黄仙龙red_led&msg=ledRedOn&iname=602&ipwd=iot");
+			});
+			$('#ledRedOff').click(function(){
+				$.get("http://192.168.31.94:8080/publish?topic=2018A14133/黄仙龙red_led&msg=ledRedOff&iname=602&ipwd=iot");
+			});
+			$('#ledGreenOn').click(function(){
+				$.get("http://192.168.31.94:8080/publish?topic=2018A14133/黄仙龙green_led&msg=ledGreenOn&iname=602&ipwd=iot");
+			});
+			$('#ledGreenOff').click(function(){
+				$.get("http://192.168.31.94:8080/publish?topic=2018A14133/黄仙龙green_led&msg=ledGreenOff&iname=602&ipwd=iot");
+			});
+			$('#ledBlueOn').click(function(){
+				$.get("http://192.168.31.94:8080/publish?topic=2018A14133/黄仙龙blue_led&msg=ledBlueOn&iname=602&ipwd=iot");
+			});
+			$('#ledBlueOff').click(function(){
+				$.get("http://192.168.31.94:8080/publish?topic=2018A14133/黄仙龙blue_led&msg=ledBlueOff&iname=602&ipwd=iot");
+			});
+		});
+	</script>
+</body>
+</html>
